@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    img {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+    h2 {
+      color: #e75480;
+    }
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    button {
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+    #no {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <img src="https://i.imgur.com/6oKQK5y.png">
+  <h2>Will you be my Valentine? 💕</h2>
+  <div class="buttons">
+    <button id="yes" onclick="yesClick()">Yes 💖</button>
+    <button id="no" onclick="noClick()">No</button>
+  </div>
+</div>
+
+<script>
+  const messages = [
+    "Are you sure? 🥺",
+    "Really sure? 😳",
+    "Think again 💔",
+    "Don’t break my heart 😭"
+  ];
+  let i = 0;
+
+  function noClick() {
+    const no = document.getElementById("no");
+    const yes = document.getElementById("yes");
+    no.innerText = messages[i % messages.length];
+    i++;
+    yes.style.fontSize = (parseFloat(getComputedStyle(yes).fontSize) * 1.4) + "px";
+  }
+
+  function yesClick() {
+    document.body.innerHTML = "<h1 style='color:#ff4d6d'>YAY 💘🥰</h1>";
+  }
+</script>
+
+</body>
+</html>
